@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@module-federation/nextjs-mf": "^8.8.34",
+    "@shares/shared-components": "file:../../shares",
     "jose": "^6.0.12",
     "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.2",
