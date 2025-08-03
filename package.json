@@ -1,0 +1,27 @@
+{
+  "name": "micro-frontend",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm -r --parallel dev",
+    "build": "pnpm -r build",
+    "start": "pnpm -r --parallel start",
+    "devx": "pnpm --parallel --filter './packages/*' dev",
+    "buildx": "pnpm --filter './packages/*' build",
+    "startx": "pnpm --parallel --filter './packages/*' start",
+    "install-all": "pnpm install && pnpm --filter './packages/*' install",
+    "clean": "pnpm --filter './packages/*' exec rm -rf .next node_modules",
+    "deploy": "pnpm build && pm2 start ecosystem.config.js",
+    "deploy:restart": "pm2 restart ecosystem.config.js",
+    "deploy:stop": "pm2 stop ecosystem.config.js",
+    "deploy:delete": "pm2 delete ecosystem.config.js",
+    "logs": "pm2 logs",
+    "monitor": "pm2 monit"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "pm2": "^6.0.8"
+  }
+}
